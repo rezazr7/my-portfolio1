@@ -1,47 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Menu - Hawir Cafe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <title>منو - کافه Honar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container menu-container">
-        <h1>Our Menu</h1>
-        <div class="slider">
-            <div class="slide active">
-                <h2>Espresso</h2>
-                <p>Strong and bold coffee shot.</p>
-                <span class="price">150.000</span>
-            </div>
-            <div class="slide">
-                <h2>Cappuccino</h2>
-                <p>Coffee with steamed milk foam.</p>
-                <span class="price">100.000</span>
-            </div>
-            <div class="slide">
-                <h2>Matcha Latte</h2>
-                <p>Green tea latte with creamy milk.</p>
-                <span class="price">350.000</span>
-            </div>
-            <div class="slide">
-                <h2>Chocolate Cake</h2>
-                <p>Rich chocolate dessert.</p>
-                <span class="price">500.000</span>
-            </div>
+    <div class="menu-page">
+        <h1 class="menu-title">منوی Honar</h1>
+
+        <div class="categories">
+            <button class="category active" onclick="filterMenu('coffee')">قهوه</button>
+            <button class="category" onclick="filterMenu('dessert')">دسر</button>
+            <button class="category" onclick="filterMenu('cold')">نوشیدنی سرد</button>
+            <button class="category" onclick="filterMenu('tea')">چای و دمنوش</button>
         </div>
 
-        <button id="prev" class="nav-btn">❮</button>
-        <button id="next" class="nav-btn">❯</button>
+        <div class="menu-items" id="menuItems">
+            <!-- آیتم‌ها به صورت داینامیک با JS بارگذاری می‌شوند -->
+        </div>
+
+        <div class="cart" id="cart">
+            <h2>🛒 سبد خرید</h2>
+            <ul id="cartItems"></ul>
+            <p class="total">مجموع: <span id="totalPrice">۰</span> تومان</p>
+            <button class="checkout-btn">پرداخت</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
