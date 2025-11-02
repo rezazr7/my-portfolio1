@@ -1,388 +1,178 @@
-/* Reset */
+/* فونت و تم مشکی */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #1a1a1a;
-  color: #fff;
-  line-height: 1.6;
+    margin: 0;
+    background-color: #121212;
+    color: #ddd;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
-/* Container */
 .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
+    text-align: center;
+    padding: 30px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
 }
 
-/* Header */
-header {
-  background-color: #222;
-  padding: 20px 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 100;
+.welcome-container h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
 }
 
-header .logo {
-  font-size: 24px;
-  font-weight: bold;
-  display: inline-block;
-  color: #ffc107;
+.highlight {
+    color: #ff6347; /* رنگ جذاب */
 }
 
-/* Header */
-header {
-  background-color: #1a1a1a;
-  padding: 15px 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 100;
-}
-
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
-}
-
-header .logo {
-  color: #ffc107;
-  font-size: 28px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-header nav ul {
-  list-style: none; /* حذف بولت‌های ul */
-  display: flex;
-  gap: 20px; /* فاصله بین آیتم‌ها */
-  margin: 0;
-  padding: 0;
-}
-
-header nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-header nav ul li a:hover {
-  color: #ffc107;
-}
-
-/* واکنش‌گرا برای موبایل */
-@media(max-width: 768px) {
-  header .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  header nav ul li {
-    margin-bottom: 10px;
-  }
-}
-
-header nav ul li {
-  display: inline;
-  margin-left: 20px;
-}
-
-header nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-header nav ul li a:hover {
-  color: #ffc107;
-}
-
-/* Hero Section */
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: linear-gradient(135deg, #1a1a1a, #333);
-  padding-top: 80px;
-}
-
-.hero h2 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 20px;
-  margin-bottom: 30px;
+.welcome-container p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #bbb;
 }
 
 .btn {
-  padding: 12px 30px;
-  background-color: #ffc107;
-  color: #1a1a1a;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background 0.3s;
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    background-color: #ff6347;
+    color: white;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 99, 71, 0.6);
 }
 
 .btn:hover {
-  background-color: #e6b800;
+    background-color: #e5533d;
+    box-shadow: 0 6px 20px rgba(229, 83, 61, 0.8);
 }
 
-/* About Section */
-.about {
-  padding: 80px 0;
-  background-color: #2a2a2a;
+/* منو و اسلاید شو */
+
+.menu-container h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #ff6347;
 }
 
-.about h2 {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 40px;
+.slider {
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(255, 99, 71, 0.7);
+    position: relative;
+    height: 240px;
 }
 
-.about-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+.slide {
+    min-width: 100%;
+    background-color: #1e1e1e;
+    padding: 40px 30px;
+    box-sizing: border-box;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
 }
 
-.about-photo img {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #ffc107;
-  margin-bottom: 20px;
+.slide.active {
+    opacity: 1;
+    position: relative;
+    transform: translateX(0);
+    z-index: 1;
 }
 
-.about-text {
-  max-width: 600px;
-  margin-left: 40px;
+.slide h2 {
+    margin: 0 0 15px;
+    font-weight: 700;
+    color: #ff6347;
+    font-size: 2rem;
 }
 
-.about-text h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
+.slide p {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.4;
 }
 
-.skills span {
-  display: inline-block;
-  background-color: #ffc107;
-  color: #1a1a1a;
-  padding: 5px 12px;
-  border-radius: 20px;
-  margin: 5px;
-  font-weight: bold;
-}
-
-/* Portfolio Section */
-.portfolio {
-  padding: 80px 0;
-  background-color: #1a1a1a;
-}
-
-.portfolio h2 {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 40px;
-}
-
-.projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.project-card {
-  background-color: #2a2a2a;
-  width: 300px;
-  border-radius: 10px;
-  overflow: hidden;
-  text-align: center;
-  padding: 15px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-}
-
-.project-card img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.project-card h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.project-card p {
-  font-size: 16px;
-  margin-bottom: 15px;
-}
-
-.project-card .btn {
-  padding: 8px 20px;
-  background-color: #ffc107;
-  color: #1a1a1a;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.project-card .btn:hover {
-  background-color: #e6b800;
-}
-
-/* واکنش‌گرا */
-@media(max-width: 768px) {
-  .projects {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-/* Contact Section */
-.contact {
-  padding: 80px 20px;
-  background-color: #2a2a2a;
-}
-
-.contact h2 {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 40px;
-  color: #ffc107;
-}
-
-.contact form {
-  max-width: 600px; /* حداکثر عرض فرم */
-  margin: 0 auto;   /* مرکز چین کردن فرم */
-  display: flex;
-  flex-direction: column;
-  gap: 15px;       /* فاصله بین input ها */
-}
-
-.contact input,
-.contact textarea {
-  width: 100%;           /* پر کردن کل عرض فرم */
-  padding: 12px;
-  border-radius: 5px;
-  border: none;
-  font-size: 16px;
-  box-sizing: border-box; /* جلوگیری از بهم ریختگی padding */
-}
-
-.contact textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.contact .btn {
-  padding: 12px 25px;
-  background-color: #ffc107;
-  color: #1a1a1a;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.contact .btn:hover {
-  background-color: #e6b800;
-}
-
-#form-message {
-  text-align: center;
-  font-weight: bold;
-  margin-top: 10px;
-  color: #00ff99;
-}
-
-/* واکنش‌گرا */
-@media(max-width: 768px) {
-  .contact form {
-    width: 100%;
-  }
-}
-
-/* Footer */
-footer {
-  background-color: #222;
-  padding: 30px 0;
-  text-align: center;
-  color: #fff;
-  margin-top: 50px;
-}
-
-.footer-container p {
-  margin-bottom: 15px;
-  font-size: 16px;
-}
-
-.social-icons a {
-  color: #ffc107;
-  font-size: 28px;
-  margin: 0 12px;
-  transition: color 0.3s, transform 0.3s;
-  display: inline-block;
-}
-
-.social-icons a:hover {
-  color: #fff;
-  transform: translateY(-3px);
-}
-
-/* واکنش‌گرا */
-@media(max-width: 480px) {
-  .social-icons a {
-    font-size: 24px;
-    margin: 0 8px;
-  }
-}
-
-/* Responsive */
-@media(max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-    margin-left: 0;
-  }
-
-  header nav ul {
-    float: none;
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  header nav ul li {
+.price {
     display: block;
-    margin: 10px 0;
-  }
+    margin-top: 20px;
+    font-size: 1.6rem;
+    color: #ffa07a;
+    font-weight: 700;
+}
+
+/* دکمه های ناوبری */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+    color: #ff6347;
+    cursor: pointer;
+    user-select: none;
+    padding: 0 15px;
+    transition: color 0.3s ease;
+    z-index: 2;
+}
+
+.nav-btn:hover {
+    color: #e5533d;
+}
+
+#prev {
+    left: -60px;
+}
+
+#next {
+    right: -60px;
+}
+
+/* ریسپانسیو */
+@media screen and (max-width: 700px) {
+    .container {
+        width: 95%;
+    }
+
+    .slide {
+        padding: 30px 20px;
+        height: auto;
+    }
+
+    .nav-btn {
+        font-size: 2.2rem;
+        left: 5px;
+        right: 5px;
+        top: auto;
+        bottom: -50px;
+        transform: none;
+    }
+
+    #prev {
+        left: 5px;
+        bottom: -50px;
+    }
+
+    #next {
+        right: 5px;
+        bottom: -50px;
+    }
 }
